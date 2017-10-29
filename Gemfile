@@ -7,6 +7,7 @@ end
 
 gem 'twitter-bootstrap-rails'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'devise'
 gem 'devise-bootstrap-views'
 
 
