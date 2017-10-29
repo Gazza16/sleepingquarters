@@ -14,7 +14,10 @@
       <th><%= model_class.human_attribute_name(:shower) %></th>
       <th><%= model_class.human_attribute_name(:baths) %></th>
       <th><%= model_class.human_attribute_name(:kitchen) %></th>
+      <th><%= model_class.human_attribute_name(:image) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -30,6 +33,8 @@
         <td><%= boat.shower %></td>
         <td><%= boat.baths %></td>
         <td><%= boat.kitchen %></td>
+        <td><%= image_tag boat.image(:thumb) %></td>
+
         <td><%=l boat.created_at %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
