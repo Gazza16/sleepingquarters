@@ -1,0 +1,83 @@
+<%= form_for @boat, :html => { :class => "form-horizontal boat" } do |f| %>
+
+  <% if @boat.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@boat.errors.count, "error") %> prohibited this boat from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @boat.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :boat_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :boat_name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:boat_name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :style, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :style, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:style) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:description) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :price, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:price) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :toilets, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :toilets, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:toilets) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :shower, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :shower, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:shower) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :baths, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :baths, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:baths) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :kitchen, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :kitchen, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:kitchen) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                boats_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
