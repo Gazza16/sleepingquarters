@@ -9,6 +9,8 @@ gem 'twitter-bootstrap-rails'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
