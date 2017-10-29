@@ -33,7 +33,7 @@
         <td><%= boat.shower %></td>
         <td><%= boat.baths %></td>
         <td><%= boat.kitchen %></td>
-        <td><%= image_tag boat.image(:thumb) %></td>
+        <td><%= image_tag boat.image.url(:thumb) %></td>
 
         <td><%=l boat.created_at %></td>
         <td>

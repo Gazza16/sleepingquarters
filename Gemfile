@@ -10,7 +10,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
-
+gem 'aws-sdk', '~> 3'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
