@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  boat_name: MyString
+  type: 
+  description: MyString
+  price: 9.99
+  toilets: MyString
+  shower: MyString
+  baths: MyString
+  kitchen: MyString
+
+two:
+  boat_name: MyString
+  type: 
+  description: MyString
+  price: 9.99
+  toilets: MyString
+  shower: MyString
+  baths: MyString
+  kitchen: MyString
