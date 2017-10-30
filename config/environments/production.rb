@@ -99,5 +99,5 @@ Rails.application.configure do
         s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com"
       }
     }
-  config.action_mailer.default_url_options = { :host => 'rocky-atoll-94227.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'https://rocky-atoll-94227.herokuapp.com/' }
 end
