@@ -62,5 +62,18 @@ Rails.application.configure do
     s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com"
   }
 }
-
+#for devise signup emails
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default_url_options = { host: ENV['MAIL_HOST'] }
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  user_name:      ENV['SENDMAIL_USERNAME'],
+  password:       ENV['SENDMAIL_PASSWORD'],
+  domain:         ENV['MAIL_HOST'],
+  address:       'smtp.gmail.com',
+  port:          '587',
+  authentication: :plain,
+  enable_starttls_auto: true
+}
 end
