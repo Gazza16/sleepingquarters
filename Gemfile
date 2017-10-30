@@ -11,6 +11,8 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 3'
+gem 'rails_12factor', group: :production
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

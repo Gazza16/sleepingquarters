@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
+  get 'users/edit'
+
+  get 'users/show'
+
   resources :boats
   devise_for :users
   resources :books
