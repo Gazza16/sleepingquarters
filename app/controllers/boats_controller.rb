@@ -12,6 +12,7 @@ class BoatsController < ApplicationController
   # GET /boats/1
   # GET /boats/1.json
   def show
+    # authorize! :update, @boat
   end
 
   # GET /boats/new
@@ -21,13 +22,13 @@ class BoatsController < ApplicationController
 
   # GET /boats/1/edit
   def edit
+    authorize! :update, @boat
 
   end
 
   # POST /boats
   # POST /boats.json
   def create
-
     @boat = Boat.new(boat_params)
     @boat.user = current_user
       respond_to do |format|
