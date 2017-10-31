@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   #Get /users
   #Get /users.json
   def index
-    @users = User.all
+    @users = Users.all
   end
 
   # # GET /users/1
@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end
   # get users/1/edit
   def edit
-
   end
 
   # # PATCH/PUT /users/1
@@ -34,6 +33,7 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
   end
 
   def user_params
