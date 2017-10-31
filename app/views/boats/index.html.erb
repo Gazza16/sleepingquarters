@@ -2,6 +2,9 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+<% if user_signed_in? %>
+Welcome <%= current_user.name.capitalize %>
+<% end %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -28,7 +31,7 @@
         <td><%= boat.boat_name %></td>
         <td><%= boat.style %></td>
         <td><%= boat.description %></td>
-        <td><%= boat.price %></td>
+        <td><%= number_to_currency(boat.price) %></td>
         <td><%= boat.toilets %></td>
         <td><%= boat.shower %></td>
         <td><%= boat.baths %></td>
@@ -39,8 +42,10 @@
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       boat_path(boat), :class => 'btn btn-default btn-xs' %>
+
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_boat_path(boat), :class => 'btn btn-default btn-xs' %>
+
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       boat_path(boat),
                       :method => :delete,

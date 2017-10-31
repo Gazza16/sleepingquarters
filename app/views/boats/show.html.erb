@@ -2,7 +2,9 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
-
+  <% if user_signed_in? %>
+  Welcome <%= current_user.name %>
+  <% end %>
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:boat_name) %>:</strong></dt>
   <dd><%= @boat.boat_name %></dd>
@@ -13,7 +15,7 @@
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @boat.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
-  <dd><%= @boat.price %></dd>
+  <dd><%= number_to_currency(@boat.price) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:toilets) %>:</strong></dt>
   <dd><%= @boat.toilets %></dd>
   <dt><strong><%= model_class.human_attribute_name(:shower) %>:</strong></dt>

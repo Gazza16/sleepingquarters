@@ -1,10 +1,12 @@
 class BoatsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy, :new, :create]
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   # GET /boats
   # GET /boats.json
   def index
     @boats = Boat.all
+
   end
 
   # GET /boats/1
@@ -19,22 +21,24 @@ class BoatsController < ApplicationController
 
   # GET /boats/1/edit
   def edit
+
   end
 
   # POST /boats
   # POST /boats.json
   def create
-    @boat = Boat.new(boat_params)
 
-    respond_to do |format|
-      if @boat.save
-        format.html { redirect_to @boat, notice: 'Boat was successfully created.' }
-        format.json { render :show, status: :created, location: @boat }
-      else
-        format.html { render :new }
-        format.json { render json: @boat.errors, status: :unprocessable_entity }
+    @boat = Boat.new(boat_params)
+    @boat.user = current_user
+      respond_to do |format|
+        if @boat.save
+          format.html { redirect_to @boat, notice: 'Boat was successfully created.' }
+          format.json { render :show, status: :created, location: @boat }
+        else
+          format.html { render :new }
+          format.json { render json: @boat.errors, status: :unprocessable_entity }
+        end
       end
-    end
   end
 
   # PATCH/PUT /boats/1
@@ -69,6 +73,10 @@ class BoatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def boat_params
-      params.require(:boat).permit(:boat_name, :style, :description, :price, :toilets, :shower, :baths, :kitchen, :image)
+      params.require(:boat).permit(:boat_name, :style, :description, :price, :toilets, :shower, :baths, :kitchen, :image, :user)
+    end
+
+    def user_params
+      params.require(:user).permit(:role, :user_name, :id)
     end
 end
