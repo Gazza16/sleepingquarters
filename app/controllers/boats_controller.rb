@@ -1,6 +1,6 @@
 class BoatsController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
-  before_action :set_boat, only: [:show, :edit, :update, :destroy]
+   before_action :authenticate_user!, only: [:index]
+   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   # GET /boats
   # GET /boats.json
@@ -28,7 +28,7 @@ class BoatsController < ApplicationController
   # POST /boats.json
   def create
     @boat = Boat.new(boat_params)
-    @boat.user = current_user
+     @boat.user = current_user
       respond_to do |format|
         if @boat.save
           format.html { redirect_to @boat, notice: 'Boat was successfully created.' }
