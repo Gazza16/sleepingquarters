@@ -25,9 +25,24 @@
   <dt><strong><%= model_class.human_attribute_name(:kitchen) %>:</strong></dt>
   <dd><%= @boat.kitchen %></dd>
 </dl>
+<%= form_for :booking, url: bookings_path, :html => { :class => "form-horizontal product" } do |f| %>
+        <%= f.hidden_field :boat_id, value: @boat.id %>
+
+
+        <div class="form-group">
+          <div class="col-lg-offset-2 col-lg-10">
+            <%= f.submit "Add to Cart", :class => 'btn btn-primary' %>
+            <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                      root_path, :class => 'btn btn-default' %>
+          </div>
+        </div>
+       <% end %>
 
     <%= link_to t('.back', :default => t("helpers.links.back")),
               boats_path, :class => 'btn btn-default'  %>
+  <div class="col-lg-offset-2 col-lg-10">
+
+  </div>
 
    <% if @boat.user == current_user %>
     <%= link_to t('.edit', :default => t("helpers.links.edit")),

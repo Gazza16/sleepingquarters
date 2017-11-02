@@ -1,4 +1,6 @@
 class Boat < ApplicationRecord
+  validates_presence_of :boat_name, :style, :description, :price, :boat_id
+  belongs_to :booking
   belongs_to :user
   has_attached_file :image, styles: {
     large: "600x600>",

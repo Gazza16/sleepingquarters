@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
   def index
+    @boats = Boat.all
   end
-  
+
   def about
   end
 

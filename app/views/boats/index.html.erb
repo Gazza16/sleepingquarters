@@ -10,7 +10,7 @@ Welcome <%= current_user.name%>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+
       <th><%= model_class.human_attribute_name(:boat_name) %></th>
       <th><%= model_class.human_attribute_name(:style) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
@@ -20,7 +20,7 @@ Welcome <%= current_user.name%>
       <th><%= model_class.human_attribute_name(:baths) %></th>
       <th><%= model_class.human_attribute_name(:kitchen) %></th>
       <th><%= model_class.human_attribute_name(:image) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
 
 
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -29,7 +29,7 @@ Welcome <%= current_user.name%>
   <tbody>
     <% @boats.each do |boat| %>
       <tr>
-        <td><%= link_to boat.id, boat_path(boat) %></td>
+
         <td><%= boat.boat_name %></td>
         <td><%= boat.style %></td>
         <td><%= boat.description %></td>
@@ -40,7 +40,7 @@ Welcome <%= current_user.name%>
         <td><%= boat.kitchen %></td>
         <td><%= image_tag boat.image.url(:thumb) %></td>
 
-        <td><%=l boat.created_at %></td>
+
         <td>
 
           <%= link_to t('.show', :default => t("helpers.links.show")),
@@ -49,6 +49,7 @@ Welcome <%= current_user.name%>
           <% if can? :update, boat %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_boat_path(boat), :class => 'btn btn-default btn-xs' %>
+
           <% end %>
           <% if can? :destroy, boat %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -57,9 +58,10 @@ Welcome <%= current_user.name%>
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
                       <% end %>
+                      <% end%>
         </td>
       </tr>
-    <% end %>
+
   </tbody>
 </table>
 

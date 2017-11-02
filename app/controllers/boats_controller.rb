@@ -1,18 +1,17 @@
 class BoatsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy, :new, :create]
+  before_action :authenticate_user!, only: [:index]
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   # GET /boats
   # GET /boats.json
   def index
     @boats = Boat.all
-
   end
 
   # GET /boats/1
   # GET /boats/1.json
   def show
-    # authorize! :update, @boat
+
   end
 
   # GET /boats/new
@@ -23,7 +22,6 @@ class BoatsController < ApplicationController
   # GET /boats/1/edit
   def edit
     authorize! :update, @boat
-
   end
 
   # POST /boats

@@ -4,3 +4,18 @@
 <h1>Welcome to Sleeping 1/4's</h1>
 
 <h2>please check out all the privately owned Boats that we have available for you to use on your next holiday.</h2>
+
+<div class="center">
+  <div class="row">
+    <% @boats.each do |boat| %>
+      <div class="col-sm-3 product-box">
+        <div class="panel panel-primary">
+          <div class="panel-heading"><%= boat.boat_name %></div>
+          <div class="panel-body"><%= image_tag boat.image.url(:thumb), :class=>"center-panel-image"%></div>
+          <div class="panel-footer"> <%= link_to t('.show', :default => t("helpers.links.show")), boat_path(boat), :class => 'btn btn-primary center-panel-image' %></div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
