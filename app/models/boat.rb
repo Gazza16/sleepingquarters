@@ -1,5 +1,5 @@
 class Boat < ApplicationRecord
-  validates_presence_of :boat_name, :style, :description, :price
+  validates_presence_of :boat_name, :style, :description, :price, :image
   # belongs_to :booking
   has_many :bookings
   belongs_to :user

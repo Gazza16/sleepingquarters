@@ -2,6 +2,7 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+<%= link_to t('add', :default => t("helpers.links.add boat")), boats_url, :class => 'btn btn-primary' %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -18,7 +19,7 @@
 
         <td><%= image_tag booking.boat.image(:thumb) %></td>
         <td><%= booking.user.name %></td>
-        <td><%= booking.boat.price %></td>
+        <td><%= number_to_currency(booking.boat.price) %></td>
 
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
@@ -35,6 +36,4 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            boats_url,
-            :class => 'btn btn-primary' %>
+<%= link_to t('add', :default => t("helpers.links.add boat")), boats_url, :class => 'btn btn-primary' %>
