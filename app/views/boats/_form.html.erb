@@ -6,7 +6,7 @@
       </div>
       <div class="panel-body">
         <ul>
-        <% @boat.errors.full_messages.each do |msg| %>
+        <% @boat.errors.full_message s.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
         </ul>

@@ -32,11 +32,12 @@
         <div class="form-group">
           <div class="col-lg-offset-2 col-lg-10">
             <%= f.submit "Add to Cart", :class => 'btn btn-primary' %>
-            <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                      root_path, :class => 'btn btn-default' %>
+            <% end %>
+
+            <%= link_to t(".contact", :default => t("helpers.links.contact_owner")),conversations_path(sender_id: current_user.id, recipient_id: @boat.user.id), :method => 'post', :class => 'btn btn-primary' %>
+            <%= link_to t('.cancel', :default => t("helpers.links.cancel")),root_path, :class => 'btn btn-default' %>
           </div>
         </div>
-       <% end %>
 
     <%= link_to t('.back', :default => t("helpers.links.back")),
               boats_path, :class => 'btn btn-default'  %>
@@ -54,4 +55,4 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
-   <% end %>
+<% end %>

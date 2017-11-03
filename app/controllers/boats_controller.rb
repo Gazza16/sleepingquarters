@@ -11,7 +11,7 @@ class BoatsController < ApplicationController
   # GET /boats/1
   # GET /boats/1.json
   def show
-
+    
   end
 
   # GET /boats/new

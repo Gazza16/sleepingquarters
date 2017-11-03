@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates_presence_of :name
+  # validates_presence_of :name
   has_many :boats, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
