@@ -11,7 +11,7 @@ class BoatsController < ApplicationController
   # GET /boats/1
   # GET /boats/1.json
   def show
-    
+
   end
 
   # GET /boats/new
@@ -72,7 +72,7 @@ class BoatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def boat_params
-      params.require(:boat).permit(:boat_name, :style, :description, :price, :toilets, :shower, :baths, :kitchen, :image, :user)
+      params.require(:boat).permit(:boat_name, :style, :description, :price, :toilets, :shower, :baths, :kitchen, :image, :user, :address, :latitude, :longitude)
     end
 
     def user_params
