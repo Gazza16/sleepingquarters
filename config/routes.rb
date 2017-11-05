@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :bookings
+
   get 'users/index'
   get 'users/edit/:id', to: 'users#edit'
   get 'users/show'
@@ -9,9 +9,14 @@ Rails.application.routes.draw do
   get 'pages/contact', to: 'pages#contact'
   get 'pages/location', to: 'pages#location'
 
-  resources :boats
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   devise_for :users
+
+  resources :bookings
   resources :books
+  resources :boats
 
   resources :conversations do
     resources :messages

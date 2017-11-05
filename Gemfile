@@ -14,6 +14,8 @@ gem 'aws-sdk', '~> 3'
 gem 'rails_12factor', group: :production
 gem "cancan"
 gem 'geocoder'
+gem 'activeadmin'
+
 
 
 
