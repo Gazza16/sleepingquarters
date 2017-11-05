@@ -25,6 +25,13 @@
   <dt><strong><%= model_class.human_attribute_name(:kitchen) %>:</strong></dt>
   <dd><%= @boat.kitchen %></dd>
 </dl>
+
+<iframe
+  width="450"
+  height="250"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCshUdCPfT9ANCg1-cnpgPs8ZjIBdewZUM&q=<%= @boat.latitude %>, <%=@boat.longitude %>" allowfullscreen>
+</iframe>
 <%= form_for :booking, url: bookings_path, :html => { :class => "form-horizontal product" } do |f| %>
         <%= f.hidden_field :boat_id, value: @boat.id %>
 

@@ -1,4 +1,6 @@
 class Boat < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
   validates_presence_of :boat_name, :style, :description, :price, :image
   # belongs_to :booking
   has_many :bookings
