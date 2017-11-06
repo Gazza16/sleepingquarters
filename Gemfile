@@ -15,6 +15,7 @@ gem 'rails_12factor', group: :production
 gem "cancan"
 gem 'geocoder'
 gem 'activeadmin'
+gem 'stripe'
 
 
 
