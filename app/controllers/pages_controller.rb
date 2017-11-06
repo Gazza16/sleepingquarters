@@ -14,4 +14,7 @@ class PagesController < ApplicationController
 
   def location
   end
+  def thankyou
+
+  end
 end
