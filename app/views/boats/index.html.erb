@@ -4,8 +4,11 @@
 </div>
 <% if user_signed_in? %>
 
-Welcome <%= current_user.name%>
+  Welcome <%= current_user.name%>
 
+<% end %>
+<% if @boats.blank? %>
+  <h4>There are no boats containing the term <%= params[:search] %>.</h4>
 <% end %>
 <table class="table table-striped">
   <thead>

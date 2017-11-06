@@ -6,12 +6,16 @@ class BoatsController < ApplicationController
   # GET /boats.json
   def index
     @boats = Boat.all
+      if params[:search]
+        @boats = Boat.search(params[:search]).order("created_at DESC")
+      else
+        @boats = Boat.all.order("created_at DESC")
+      end
   end
 
   # GET /boats/1
   # GET /boats/1.json
   def show
-
   end
 
   # GET /boats/new

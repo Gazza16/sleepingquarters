@@ -37,6 +37,10 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 				<% if user_signed_in? %>
+          <li><%= form_tag(boats_path, :method => "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Boats" %>
+              <%= submit_tag "Search", :name => nil %>
+              <% end %></li>
 					<li><%= link_to('My Account', edit_user_registration_path(current_user)) %></li>
 					<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
 				<% else %>
