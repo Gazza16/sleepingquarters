@@ -84,51 +84,51 @@ ___
   * Clone the repo
   * Set up a dot env file and set all these up
     * S3_BUCKET_NAME=yourS3BucketName(will need t be done as photos are hosted in development)
-    AWS_ACCESS_KEY_ID=YourAWSAccessKEy
-    AWS_SECRET_ACCESS_KEY=YourAwsSecretAccess_key
-    AWS_REGION=AwsRegion
-    MAIL_HOST=localhost:3000
-    SENDMAIL_USERNAME=your sendMailUserName
-    SENDMAIL_PASSWORD=SendmailPassword
-    SENDGRID_API=SendGridApi
-    SENDGRID_API_NAME=SendGridName
-    STRIPE_PUBLISHABLE_KEY=YourStripePublishableKey
-    STRIPE_SECRET_KEY=YourStripeSecretKey
+    * AWS_ACCESS_KEY_ID=YourAWSAccessKEy
+    * AWS_SECRET_ACCESS_KEY=YourAwsSecretAccess_key
+    * AWS_REGION=AwsRegion
+    * MAIL_HOST=localhost:3000
+    * SENDMAIL_USERNAME=your sendMailUserName
+    * SENDMAIL_PASSWORD=SendmailPassword
+    * SENDGRID_API=SendGridApi
+    * SENDGRID_API_NAME=SendGridName
+    * STRIPE_PUBLISHABLE_KEY=YourStripePublishableKey
+    * STRIPE_SECRET_KEY=YourStripeSecretKey
     links for [sendgrid](https://app.sendgrid.com), [Stripe](https://dashboard.stripe.com), and [Amazon](https://signin.aws.amazon.com).
 
 Sendgrid Username and password is acquired by asking heroku for it run in terminal:
 
-''' $ heroku addons:create sendgrid:starter '''
+'''$ heroku addons:create sendgrid:starter'''
 
 Get your credentials:
 
-''' $ heroku config:get SENDGRID_USERNAME '''
+'''$ heroku config:get SENDGRID_USERNAME'''
 
 The value returned is your SENDGRID_USERNAME place this as the value for SENDGRID_USERNAME in dot env file.
 The next step is to get the SENDGRID_PASSWORD run in terminal:
 
-''' $ heroku config:get SENDGRID_PASSWORD '''
+'''$ heroku config:get SENDGRID_PASSWORD'''
 
 again the value returned is treated the same as the SENDGRID_PASSWORD
 once you have set up all these variables you should perform in terminal:
 
-''' rails db:create '''
+'''rails db:create'''
 
 Followed by:
 
-''' rails db:migrate '''
+'''rails db:migrate'''
 
 and then
 
-''' rails server '''
+'''rails server'''
 
 To set up an admin user You will need to create a seeds.rb file in your Db folder and then put in code like this...
 
-''' AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development? '''
+'''AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?'''
 
 Then run in Terminal
 
-''' rails db:seed '''
+'''rails db:seed'''
 
 navigate to http://localhost:3000/admin
 and login with the credentials provided in the seeds.rb file yay your an admin
