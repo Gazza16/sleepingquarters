@@ -29,7 +29,6 @@
           data-locale="auto"></script>
 <% end %>
 <%= link_to t('.back', :default => t("helpers.links.back")), bookings_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")), edit_booking_path(@booking), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               booking_path(@booking),
               :method => 'delete',

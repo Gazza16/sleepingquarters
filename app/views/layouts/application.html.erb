@@ -6,17 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Sleeping 1/4's" %></title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag "application", :media => "all" %>
-
-
     <%= javascript_include_tag "application" %>
-
-
-
   </head>
   <body>
-
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -37,7 +30,7 @@
           <ul class="nav navbar-nav navbar-right">
 				    <% if user_signed_in? %>
             <li><%= form_tag(boats_path, :method => "get", id: "search-form") do %>
-                  <%= text_field_tag :search, params[:search], placeholder: "Search Boats", :class => 'form-control' %>
+                  <%= text_field_tag :search, params[:search], placeholder: "Search Boats", :class => 'navbar-search' %>
                   <%= submit_tag "Search", :name => nil, :class => 'btn btn-primary' %>
               <% end %></li>
 
@@ -53,7 +46,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <%= bootstrap_flash %>
+          <%= bootstrap_flash(class: "alert-dismissable") %>
           <%= yield %>
         </div>
         <!-- <div class="col-lg-2">
