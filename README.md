@@ -112,23 +112,33 @@ The next step is to get the SENDGRID_PASSWORD run in terminal:
 again the value returned is treated the same as the SENDGRID_PASSWORD
 once you have set up all these variables you should perform in terminal:
 
-'''rails db:create'''
+'''
+rails db:create
+'''
 
 Followed by:
 
-'''rails db:migrate'''
+'''
+rails db:migrate
+'''
 
 and then
 
-'''rails server'''
+'''
+rails server
+'''
 
 To set up an admin user You will need to create a seeds.rb file in your Db folder and then put in code like this...
 
-'''AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?'''
+'''
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+'''
 
 Then run in Terminal
 
-'''rails db:seed'''
+'''
+rails db:seed
+'''
 
 navigate to http://localhost:3000/admin
 and login with the credentials provided in the seeds.rb file yay your an admin
