@@ -13,37 +13,37 @@ ____
 ### 1) Project Requirements ###
   So this application was built as part of our assessment at [CoderAcademy](https://coderacademy.edu.au/) In this we had 2 weeks to build a double sided marketplace, with the following functionality.
   * Create your application using Ruby on Rails.
-    [x] Done
+    \[x] Done
   * Demonstrate knowledge of Rails conventions.
-    [x] Done
+    \[x] Done
   * Use postgresql database in development.
-    [x] Done
+    \[x] Done
   * Use an API (eg. Omniauth, Geocoding, Maps, other..).
-    [x] Done (googlemaps, Sendgrid, Amazon, Stripe)
+    \[x] Done (googlemaps, Sendgrid, Amazon, Stripe)
   * Use appropriate gems.
-    [x] Done Checkout gemfile
+    \[x] Done Checkout gemfile
   * Use environmental variables to protect API keys etc. (dotenv)
-    [x] Done dotenv
+    \[x] Done dotenv
   * Implement a payment system for your product. (e.g. Stripe)
-    [x] Done Stripe
+    \[x] Done Stripe
   * Your app must send transactional emails (eg. using Mailgun).
-    [x] Done used Sendgrid
+    \[x] Done used Sendgrid
   * Your app should have an internal user messaging system.
-    [x] Done
+    \[x] Done
   * Your app will have some type of searching, sorting and/or filtering capability.
-    [x] Done
+    \[x] Done
   * Your app will have some type of file uploading capability (eg. images).
-    [x] Done (paperclip and AWS S3 Bucket)
+    \[x] Done (paperclip and AWS S3 Bucket)
   * Your app will have authentication (eg. Devise, must have full functionality in place).
-    [x] Done (devise and mailer  validation mail setup and used cancan for role)
+    \[x] Done (devise and mailer  validation mail setup and used cancan for role)
   * Your app will have authorisation (users have restrictions on what they can see and edit).
-    [x] Done (users can only edit and delete their boats/bookings used cancan gem)
+    \[x] Done (users can only edit and delete their boats/bookings used cancan gem)
   * Your app will have an admin dashboard for the admin user to administrate the site.
-    [x] Done (active admin gem)
+    \[x] Done (active admin gem)
   * Document your application with a README that explains how to setup, configure and use your application.
-    [x] Done
+    \[x] Done
   * Application needs to be deployed to heroku/AWS.
-    [x] Done (heroku)
+    \[x] Done (heroku)
 ____
 ### 2) Application Brief ###  
 Boats are really fun but not everyone can afford or want to own a boat outright, meanwhile many boats are left
@@ -55,7 +55,7 @@ Balsamiq was used for wireframing as I have used it on previous projects,
  You can find the folder project documentation in the repo.
 ___
 ### 4) User Stories ###
- * Boat users
+* Boat users
   * Want a page that will display the  relevant information of a boat
   * Be able to directly message a boat owner to ask questions about boat
   * I want to see maps of where I can use the boat
@@ -98,30 +98,30 @@ ___
 
     Sendgrid Username  and password is acquired by asking heroku for it run in terminal
 
-      '''bash
-      $ heroku addons:create sendgrid:starter
-      '''
-      Get your credentials
-      '''bash
-      $ heroku config:get SENDGRID_USERNAME
-      '''
-      The value returned is your SENDGRID_USERNAME place this as the value for SENDGRID_USERNAME in dot env file.
-      The next step is to get the SENDGRID_PASSWORD run in terminal
-      '''bash
-      $ heroku config:get SENDGRID_PASSWORD
-      '''
-      again the value returned is treated the same as the SENDGRID_PASSWORD
-       once you have set up all these variables you should perform in terminal
-       '''bash
-       rails db:create
-       '''
-       '''bash
-       rails db:migrate
-       '''
-       and then
-       '''bash
-       rails server
-       '''
+'''bash
+$ heroku addons:create sendgrid:starter
+'''
+Get your credentials
+'''bash
+$ heroku config:get SENDGRID_USERNAME
+'''
+The value returned is your SENDGRID_USERNAME place this as the value for SENDGRID_USERNAME in dot env file.
+The next step is to get the SENDGRID_PASSWORD run in terminal
+'''bash
+$ heroku config:get SENDGRID_PASSWORD
+'''
+again the value returned is treated the same as the SENDGRID_PASSWORD
+ once you have set up all these variables you should perform in terminal
+ '''bash
+ rails db:create
+ '''
+ '''bash
+ rails db:migrate
+ '''
+ and then
+ '''bash
+ rails server
+ '''
 
       To set up an admin user You will need to create a seeds.rb file in your Db folder and then put in code like this...
       ''' AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
