@@ -17,33 +17,33 @@ ____
   * Demonstrate knowledge of Rails conventions.
     - [x] Done
   * Use postgresql database in development.
-    [checkbox:checked] Done
+    - [x] Done
   * Use an API (eg. Omniauth, Geocoding, Maps, other..).
-    [checkbox:checked] Done (googlemaps, Sendgrid, Amazon, Stripe)
+    - [x] Done (googlemaps, Sendgrid, Amazon, Stripe)
   * Use appropriate gems.
-    [checkbox:checked] Done Checkout gemfile
+    - [x] Done Checkout gemfile
   * Use environmental variables to protect API keys etc. (dotenv)
-    [checkbox:checked] Done dotenv
+    - [x] Done dotenv
   * Implement a payment system for your product. (e.g. Stripe)
-    [checkbox:checked] Done Stripe
+    - [x] Done Stripe
   * Your app must send transactional emails (eg. using Mailgun).
-    [checkbox:checked] Done used Sendgrid
+    - [x] Done used Sendgrid
   * Your app should have an internal user messaging system.
-    [checkbox:checked] Done
+    - [x] Done
   * Your app will have some type of searching, sorting and/or filtering capability.
-    [checkbox:checked] Done
+    - [x] Done
   * Your app will have some type of file uploading capability (eg. images).
-    [checkbox:checked] Done (paperclip and AWS S3 Bucket)
+    - [x] Done (paperclip and AWS S3 Bucket)
   * Your app will have authentication (eg. Devise, must have full functionality in place).
-    [checkbox:checked] Done (devise and mailer  validation mail setup and used cancan for role)
+    - [x] Done (devise and mailer  validation mail setup and used cancan for role)
   * Your app will have authorisation (users have restrictions on what they can see and edit).
-    [checkbox:checked] Done (users can only edit and delete their boats/bookings used cancan gem)
+    - [x] Done (users can only edit and delete their boats/bookings used cancan gem)
   * Your app will have an admin dashboard for the admin user to administrate the site.
-    [checkbox:checked] Done (active admin gem)
+    - [x] Done (active admin gem)
   * Document your application with a README that explains how to setup, configure and use your application.
-    [checkbox:checked] Done
+    - [x] Done
   * Application needs to be deployed to heroku/AWS.
-    [checkbox:checked] Done (heroku)
+    - [x] Done (heroku)
 ____
 ### 2) Application Brief ###  
 Boats are really fun but not everyone can afford or want to own a boat outright, meanwhile many boats are left
@@ -96,40 +96,40 @@ ___
     STRIPE_SECRET_KEY=YourStripeSecretKey
     links for [sendgrid](https://app.sendgrid.com), [Stripe](https://dashboard.stripe.com), and [Amazon](https://signin.aws.amazon.com).
 
-Sendgrid Username  and password is acquired by asking heroku for it run in terminal
+Sendgrid Username and password is acquired by asking heroku for it run in terminal:
 
-'''bash
-$ heroku addons:create sendgrid:starter
-'''
-Get your credentials
-'''bash
-$ heroku config:get SENDGRID_USERNAME
-'''
+''' $ heroku addons:create sendgrid:starter '''
+
+Get your credentials:
+
+''' $ heroku config:get SENDGRID_USERNAME '''
+
 The value returned is your SENDGRID_USERNAME place this as the value for SENDGRID_USERNAME in dot env file.
-The next step is to get the SENDGRID_PASSWORD run in terminal
-'''bash
-$ heroku config:get SENDGRID_PASSWORD
-'''
+The next step is to get the SENDGRID_PASSWORD run in terminal:
+
+''' $ heroku config:get SENDGRID_PASSWORD '''
+
 again the value returned is treated the same as the SENDGRID_PASSWORD
-once you have set up all these variables you should perform in terminal
-'''bash
-rails db:create
-'''
-'''bash
-rails db:migrate
-'''
+once you have set up all these variables you should perform in terminal:
+
+''' rails db:create '''
+
+Followed by:
+
+''' rails db:migrate '''
+
 and then
-'''bash
-rails server
-'''
+
+''' rails server '''
+
 To set up an admin user You will need to create a seeds.rb file in your Db folder and then put in code like this...
-''' bash
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-'''
+
+''' AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development? '''
+
 Then run in Terminal
-'''bash
-rails db:seed
-'''
+
+''' rails db:seed '''
+
 navigate to http://localhost:3000/admin
 and login with the credentials provided in the seeds.rb file yay your an admin
       ___
