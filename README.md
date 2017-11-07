@@ -13,9 +13,9 @@ ____
 ### 1) Project Requirements ###
   So this application was built as part of our assessment at [CoderAcademy](https://coderacademy.edu.au/) In this we had 2 weeks to build a double sided marketplace, with the following functionality.
   * Create your application using Ruby on Rails.
-    [checkbox:checked] Done
+    - [x] Done
   * Demonstrate knowledge of Rails conventions.
-    [checkbox:checked] Done
+    - [x] Done
   * Use postgresql database in development.
     [checkbox:checked] Done
   * Use an API (eg. Omniauth, Geocoding, Maps, other..).
