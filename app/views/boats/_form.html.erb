@@ -17,28 +17,28 @@
   <div class="form-group">
     <%= f.label :boat_name, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :boat_name, :class => 'form-control' %>
+      <%= f.text_field :boat_name, :class => 'form-control', placeholder: "Enter boat's name" %>
     </div>
     <%=f.error_span(:boat_name) %>
   </div>
   <div class="form-group">
-    <%= f.label :preffered_waterway, :class => 'control-label col-lg-2' %>
+    <%= f.label :prefered_waterway, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :address, :class => 'form-control' %>
+      <%= f.text_field :address, :class => 'form-control', placeholder: "Enter preferred waterway eg. Nerang River" %>
     </div>
-    <%=f.error_span(:preffered_waterway) %>
+    <%=f.error_span(:prefered_waterway) %>
   </div>
   <div class="form-group">
     <%= f.label :style, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :style, :class => 'form-control' %>
+      <%= f.text_field :style, :class => 'form-control', placeholder: "The style of your Boat Houseboat, Cruiser, Yacht etc" %>
     </div>
     <%=f.error_span(:style) %>
   </div>
   <div class="form-group">
     <%= f.label :description, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_area :description, :class => 'form-control' %>
+      <%= f.text_area :description, :class => 'form-control', placeholder: "Enter an awesome description of your boat so that people will hire it." %>
     </div>
     <%=f.error_span(:description) %>
   </div>
