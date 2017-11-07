@@ -1,23 +1,20 @@
 ActiveAdmin.setup do |config|
   # == Site Title
-  #
+
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
   config.site_title = "Sleeping"
-
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
   # config.site_title_link = "/"
-
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
   #
   # Note: Aim for an image that's 21px high so it fits in the header.
   #
   # config.site_title_image = "logo.png"
-
   # == Default Namespace
   #
   # Set the default namespace each administration resource
@@ -55,7 +52,6 @@ ActiveAdmin.setup do |config|
   # This setting changes the method which Active Admin calls
   # within the application controller.
   config.authentication_method = :authenticate_admin_user!
-
   # == User Authorization
   #
   # Active Admin will automatically call an authorization
@@ -63,22 +59,18 @@ ActiveAdmin.setup do |config|
   # ensure that there is a user with proper rights. You can use
   # CanCanAdapter or make your own. Please refer to documentation.
   # config.authorization_adapter = ActiveAdmin::CanCanAdapter
-
   # In case you prefer Pundit over other solutions you can here pass
   # the name of default policy class. This policy will be used in every
   # case when Pundit is unable to find suitable policy.
   # config.pundit_default_policy = "MyDefaultPunditPolicy"
-
   # You can customize your CanCan Ability class name here.
   # config.cancan_ability_class = "Ability"
-
   # You can specify a method to be called on unauthorized access.
   # This is necessary in order to prevent a redirect loop which happens
   # because, by default, user gets redirected to Dashboard. If user
   # doesn't have access to Dashboard, he'll end up in a redirect loop.
   # Method provided here should be defined in application_controller.rb.
   # config.on_unauthorized_access = :access_denied
-
   # == Current User
   #
   # Active Admin will associate actions with the current
@@ -87,7 +79,6 @@ ActiveAdmin.setup do |config|
   # This setting changes the method which Active Admin calls
   # (within the application controller) to return the currently logged in user.
   config.current_user_method = :current_admin_user
-
   # == Logging Out
   #
   # Active Admin displays a logout link on each screen. These
@@ -99,13 +90,11 @@ ActiveAdmin.setup do |config|
   #
   # Default:
   config.logout_link_path = :destroy_admin_user_session_path
-
   # This setting changes the http method used when rendering the
   # link. For example :get, :delete, :put, etc..
   #
   # Default:
   # config.logout_link_method = :get
-
   # == Root
   #
   # Set the action to call for the root path. You can set different
@@ -113,7 +102,6 @@ ActiveAdmin.setup do |config|
   #
   # Default:
   # config.root_to = 'dashboard#index'
-
   # == Admin Comments
   #
   # This allows your users to comment on any resource registered with Active Admin.
@@ -133,13 +121,11 @@ ActiveAdmin.setup do |config|
   #
   # You can customize the comment menu:
   # config.comments_menu = { parent: 'Admin', priority: 1 }
-
   # == Batch Actions
   #
   # Enable and disable Batch Actions
   #
   config.batch_actions = true
-
   # == Controller Filters
   #
   # You can add before, after and around filters to all of your
@@ -154,7 +140,6 @@ ActiveAdmin.setup do |config|
   # https://github.com/svenfuchs/i18n/blob/master/lib%2Fi18n%2Fbackend%2Fbase.rb#L52
   #
   config.localize_format = :long
-
   # == Setting a Favicon
   #
   # config.favicon = 'favicon.ico'

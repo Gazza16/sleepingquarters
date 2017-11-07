@@ -1,65 +1,54 @@
 <%- model_class = Boat -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
-  <% if user_signed_in? %>
-  Welcome <%= current_user.name %>
-  <% end %>
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:boat_name) %>:</strong></dt>
-  <dd><%= @boat.boat_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
-  <dd><%= image_tag @boat.image(:large) %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:style) %>:</strong></dt>
-  <dd><%= @boat.style %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @boat.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
-  <dd><%= number_to_currency(@boat.price) %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:toilets) %>:</strong></dt>
-  <dd><%= @boat.toilets %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:shower) %>:</strong></dt>
-  <dd><%= @boat.shower %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:baths) %>:</strong></dt>
-  <dd><%= @boat.baths %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:kitchen) %>:</strong></dt>
-  <dd><%= @boat.kitchen %></dd>
-</dl>
-
-<iframe
-  width="450"
-  height="250"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCshUdCPfT9ANCg1-cnpgPs8ZjIBdewZUM&q=<%= @boat.latitude %>, <%=@boat.longitude %>" allowfullscreen>
-</iframe>
-<%= form_for :booking, url: bookings_path, :html => { :class => "form-horizontal product" } do |f| %>
-        <%= f.hidden_field :boat_id, value: @boat.id %>
-
-
-        <div class="form-group">
-          <div class="col-lg-offset-2 col-lg-10">
-            <%= f.submit "Add to Cart", :class => 'btn btn-primary' %>
-            <% end %>
-
-            <%= link_to t(".contact", :default => t("helpers.links.contact_owner")),conversations_path(sender_id: current_user.id, recipient_id: @boat.user.id), :method => 'post', :class => 'btn btn-primary' %>
-            <%= link_to t('.cancel', :default => t("helpers.links.cancel")),root_path, :class => 'btn btn-default' %>
-          </div>
-        </div>
-
-    <%= link_to t('.back', :default => t("helpers.links.back")),
-              boats_path, :class => 'btn btn-default'  %>
-  <div class="col-lg-offset-2 col-lg-10">
-
+  <div class="page-header">
+    <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
   </div>
-
-   <% if @boat.user == current_user %>
-    <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_boat_path(@boat), :class => 'btn btn-default' %>
-   <% end %>
-   <% if @boat.user == current_user %>
-    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              boat_path(@boat),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-<% end %>
+    <% if user_signed_in? %>
+    Welcome <%= current_user.name %>
+    <% end %>
+  <dl class="dl-horizontal">
+    <dt><strong><%= model_class.human_attribute_name(:boat_name) %>:</strong></dt>
+    <dd><%= @boat.boat_name %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
+    <dd><%= image_tag @boat.image(:large) %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:style) %>:</strong></dt>
+    <dd><%= @boat.style %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+    <dd><%= @boat.description %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+    <dd><%= number_to_currency(@boat.price) %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:toilets) %>:</strong></dt>
+    <dd><%= @boat.toilets %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:shower) %>:</strong></dt>
+    <dd><%= @boat.shower %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:baths) %>:</strong></dt>
+    <dd><%= @boat.baths %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:kitchen) %>:</strong></dt>
+    <dd><%= @boat.kitchen %></dd>
+  </dl>
+  <iframe
+    width="450"
+    height="250"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCshUdCPfT9ANCg1-cnpgPs8ZjIBdewZUM&q=<%= @boat.latitude %>, <%=@boat.longitude %>" allowfullscreen>
+  </iframe>
+  <%= form_for :booking, url: bookings_path, :html => { :class => "form-horizontal product" } do |f| %>
+          <%= f.hidden_field :boat_id, value: @boat.id %>
+          <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+          <%= f.submit "Add to Cart", :class => 'btn btn-primary' %>
+  <% end %>
+              <%= link_to t(".contact", :default => t("helpers.links.contact_owner")),conversations_path(sender_id: current_user.id, recipient_id: @boat.user.id), :method => 'post', :class => 'btn btn-primary' %>
+              <%= link_to t('.cancel', :default => t("helpers.links.cancel")),root_path, :class => 'btn btn-default' %>
+            </div>
+          </div>
+      <%= link_to t('.back', :default => t("helpers.links.back")), boats_path, :class => 'btn btn-default'  %>
+     <% if @boat.user == current_user %>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")), edit_boat_path(@boat), :class => 'btn btn-default' %>
+     <% end %>
+     <% if @boat.user == current_user %>
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                boat_path(@boat),
+                :method => 'delete',
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-danger' %>
+  <% end %>

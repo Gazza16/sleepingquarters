@@ -1,7 +1,6 @@
 class BoatsController < ApplicationController
-   before_action :authenticate_user!, only: [:index]
-   before_action :set_boat, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:index]
+  before_action :set_boat, only: [:show, :edit, :update, :destroy]
   # GET /boats
   # GET /boats.json
   def index
@@ -12,22 +11,18 @@ class BoatsController < ApplicationController
         @boats = Boat.all.order("created_at DESC")
       end
   end
-
   # GET /boats/1
   # GET /boats/1.json
   def show
   end
-
   # GET /boats/new
   def new
     @boat = Boat.new
   end
-
   # GET /boats/1/edit
   def edit
     authorize! :update, @boat
   end
-
   # POST /boats
   # POST /boats.json
   def create
@@ -43,7 +38,6 @@ class BoatsController < ApplicationController
         end
       end
   end
-
   # PATCH/PUT /boats/1
   # PATCH/PUT /boats/1.json
   def update
@@ -57,7 +51,6 @@ class BoatsController < ApplicationController
       end
     end
   end
-
   # DELETE /boats/1
   # DELETE /boats/1.json
   def destroy
@@ -69,6 +62,7 @@ class BoatsController < ApplicationController
   end
 
   private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_boat
       @boat = Boat.find(params[:id])

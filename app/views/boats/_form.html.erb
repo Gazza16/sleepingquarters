@@ -6,9 +6,9 @@
       </div>
       <div class="panel-body">
         <ul>
-        <% @boat.errors.full_message s.each do |msg| %>
+          <% @boat.errors.full_message s.each do |msg| %>
           <li><%= msg %></li>
-        <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -17,28 +17,28 @@
   <div class="form-group">
     <%= f.label :boat_name, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :boat_name, :class => 'form-control' %>
+      <%= f.text_field :boat_name, :class => 'form-control', placeholder: "Enter boat's name" %>
     </div>
     <%=f.error_span(:boat_name) %>
   </div>
   <div class="form-group">
-    <%= f.label :preffered_waterway, :class => 'control-label col-lg-2' %>
+    <%= f.label :prefered_waterway, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :address, :class => 'form-control' %>
+      <%= f.text_field :address, :class => 'form-control', placeholder: "Enter preferred waterway eg. Nerang River" %>
     </div>
-    <%=f.error_span(:preffered_waterway) %>
+    <%=f.error_span(:prefered_waterway) %>
   </div>
   <div class="form-group">
     <%= f.label :style, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :style, :class => 'form-control' %>
+      <%= f.text_field :style, :class => 'form-control', placeholder: "The style of your Boat Houseboat, Cruiser, Yacht etc" %>
     </div>
     <%=f.error_span(:style) %>
   </div>
   <div class="form-group">
     <%= f.label :description, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_area :description, :class => 'form-control' %>
+      <%= f.text_area :description, :class => 'form-control', placeholder: "Enter an awesome description of your boat so that people will hire it." %>
     </div>
     <%=f.error_span(:description) %>
   </div>
@@ -77,7 +77,6 @@
     </div>
     <%=f.error_span(:kitchen) %>
   </div>
-
   <div class="form-group">
     <%= f.label :image, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -85,8 +84,6 @@
     </div>
     <%= f.error_span(:image) %>
   </div>
-
-
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
@@ -94,4 +91,4 @@
                 boats_path, :class => 'btn btn-default' %>
     </div>
   </div>
-  <% end %>
+<% end %>

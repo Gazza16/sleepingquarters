@@ -8,12 +8,9 @@ Rails.application.routes.draw do
   get 'pages/contact', to: 'pages#contact'
   get 'pages/location', to: 'pages#location'
   get 'pages/thankyou', to: 'pages#thankyou'
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-
   devise_for :users
-
   resources :bookings
   resources :books
   resources :boats
@@ -21,6 +18,5 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,20 +1,17 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  #Get /users
-  #Get /users.json
+  # Get /users
+  # Get /users.json
   def index
     @users = Users.all
   end
-
   # # GET /users/1
  # # GET /users/1.json
   def show
-
   end
   # get users/1/edit
   def edit
   end
-
   # # PATCH/PUT /users/1
   # # PATCH/PUT /users/1.json
   def update
@@ -35,7 +32,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user)
   end
-
   def user_params
     params.require(:user).permit(:role, :user_name)
   end
