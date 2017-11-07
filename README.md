@@ -100,11 +100,7 @@ Sendgrid Username and password is acquired by asking heroku for it run in termin
 
 '$ heroku addons:create sendgrid:starter'
 
-Get your credentials:
-
-'''
-$ heroku config:get SENDGRID_USERNAME
-'''
+Get your credentials: '$ heroku config:get SENDGRID_USERNAME'
 
 The value returned is your SENDGRID_USERNAME place this as the value for SENDGRID_USERNAME in dot env file.
 The next step is to get the SENDGRID_PASSWORD run in terminal:
