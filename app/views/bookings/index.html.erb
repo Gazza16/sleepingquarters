@@ -9,22 +9,17 @@
       <th><%= model_class.human_attribute_name(:image) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:price_per_night) %></th>
-
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @bookings.each do |booking| %>
       <tr>
-
         <td><%= image_tag booking.boat.image(:thumb) %></td>
         <td><%= booking.user.name %></td>
         <td><%= number_to_currency(booking.boat.price) %></td>
-
         <td>
-          <%= link_to t('.show', :default => t("helpers.links.show")),
-                      booking_path(booking), :class => 'btn btn-default btn-xs' %>
-
+          <%= link_to t('.show', :default => t("helpers.links.show")), booking_path(booking), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       booking_path(booking),
                       :method => :delete,

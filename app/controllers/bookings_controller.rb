@@ -1,37 +1,30 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_booking, only: [:show]
-
   # GET /bookings
   # GET /bookings.json
   def index
     @bookings = current_user.bookings
   end
-
   # GET /bookings/1
   # GET /bookings/1.json
   # def show
   #   @boat = Boat.find_by_id(params[:boat_id])
   #   # @boat = Boat.find(boat_params)
   # end
-
   # GET /bookings/new
   def new
     @booking = Booking.new
   end
-
   # GET /bookings/1/edit
   def edit
   end
-
   # POST /bookings
   # POST /bookings.json
   def create
-
     @booking = Booking.new(booking_params)
   	@booking.user_id = current_user.id
     @boat = Boat.find_by_id(params[:boat_id])
-
     respond_to do |format|
       if @booking.save
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
@@ -42,7 +35,6 @@ class BookingsController < ApplicationController
       end
     end
   end
-
   # PATCH/PUT /bookings/1
   # PATCH/PUT /bookings/1.json
   def update
@@ -58,7 +50,6 @@ class BookingsController < ApplicationController
       end
     end
   end
-
   # DELETE /bookings/1
   # DELETE /bookings/1.json
   def destroy
@@ -71,6 +62,7 @@ class BookingsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     # def boat_params
     #   params.require(:boat).permit(:boat_name, :style, :description, :price, :toilets, :shower, :baths, :kitchen, :image, :user)
@@ -78,7 +70,6 @@ class BookingsController < ApplicationController
     def set_booking
       @booking = Booking.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
       params.require(:booking).permit(:boat_id, :user_id)
