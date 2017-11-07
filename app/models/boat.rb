@@ -12,6 +12,6 @@ class Boat < ApplicationRecord
     default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   def self.search(search)
-    where("boat_name ILIKE ? OR style ILIKE ? OR description ILIKE ? OR toilets ILIKE ? OR shower ILIKE ? OR baths ILIKE ? OR kitchen ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    where("boat_name ILIKE ? OR style ILIKE ? OR description ILIKE ? OR toilets ILIKE ? OR shower ILIKE ? OR baths ILIKE ? OR kitchen ILIKE ?", "#{search}%", "#{search}%", "#{search}%", "#{search}%", "#{search}%", "#{search}%", "#{search}%")
   end
 end
