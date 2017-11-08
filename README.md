@@ -6,9 +6,9 @@
   * Entity relationship diagram
   * configuration steps
   * Whats needs improvement
-
-  ##### Quick housekeeping #####
-  Rails 5.1.4 app running ruby 2.4.1 with version 10.0 postrgresql database. Read on for further information about configuration
+___
+##### Quick housekeeping #####
+  Rails 5.1.4 app running ruby 2.4.1 with version 10.0 postrgresql database. Read on for further information about configuration the project can be found here [Sleeping quarters book your next holiday](https://rocky-atoll-94227.herokuapp.com/) any queries [contact Travis Anderson](https://travis-anderson83.github.io/contact.html)
 ____
 ### 1) Project Requirements ###
   So this application was built as part of our assessment at [CoderAcademy](https://coderacademy.edu.au/) In this we had 2 weeks to build a double sided marketplace, with the following functionality.
@@ -51,8 +51,13 @@ parked up in sheds or moored for costly fees, What sleeping 1/4's aims to do is 
 users this way the boat gets used, people can have affordable holidays and the boat owners can make a tidy profit while contributing their under-utilised assets.
 ___
 ### 3) WireFraming and Workflow Diagram ###
-Balsamiq was used for wireframing as I have used it on previous projects,
- You can find the folder project documentation in the repo.
+
+Balsamiq was used for wireframing as I have used it on previous projects.
+![Wireframes](public/images/wireframe/homepage.png?raw=true)
+to see more navigate to public/images/wireframe to see the rest.
+____
+#### User flow ###
+![Userflow](public/images/userFlow.png?raw=true)
 ___
 ### 4) User Stories ###
 * Boat users
@@ -74,11 +79,8 @@ ___
   * Have a search function in my admin console to be able to find what I want....
 ___
 ### 5) Entity Relationship Diagram ###
-  We used an ERD to better display the relationships in our database, and what columns it contains this can also be found in project documentation folder. The ERD was drawn by using Lucid Chart
-  Quick examples though:
-  A user can have zero or many boats
-  Boats can have zero or many bookings
-  Boat has one BoatOwner
+![ERD](public/images/erd.png?raw=true)
+
 ___
 ### 6) Configuration steps
   * Clone the repo
@@ -88,7 +90,7 @@ ___
     * AWS_SECRET_ACCESS_KEY=YourAwsSecretAccess_key
     * AWS_REGION=AwsRegion
     * MAIL_HOST=localhost:3000
-    * SENDMAIL_USERNAME=your sendMailUserName
+    * SENDMAIL_USERNAME=yoursendMailUserName
     * SENDMAIL_PASSWORD=SendmailPassword
     * SENDGRID_API=SendGridApi
     * SENDGRID_API_NAME=SendGridName
@@ -98,47 +100,49 @@ ___
 
 Sendgrid Username and password is acquired by asking heroku for it run in terminal:
 
-'$ heroku addons:create sendgrid:starter'
+```
+$ heroku addons:create sendgrid:starter
+```
 
-Get your credentials: '$ heroku config:get SENDGRID_USERNAME'
+Get your credentials: ```$ heroku config:get SENDGRID_USERNAME```
 
 The value returned is your SENDGRID_USERNAME place this as the value for SENDGRID_USERNAME in dot env file.
 The next step is to get the SENDGRID_PASSWORD run in terminal:
 
-'''
+```
 $ heroku config:get SENDGRID_PASSWORD
-'''
+```
 
 again the value returned is treated the same as the SENDGRID_PASSWORD
 once you have set up all these variables you should perform in terminal:
 
-'''
+```
 rails db:create
-'''
+```
 
 Followed by:
 
-'''
+```
 rails db:migrate
-'''
+```
 
 and then
 
-'''
+```
 rails server
-'''
+```
 
 To set up an admin user You will need to create a seeds.rb file in your Db folder and then put in code like this...
 
-'''
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-'''
+```
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?  
+```
 
 Then run in Terminal
 
-'''
+```
 rails db:seed
-'''
+```
 
 navigate to http://localhost:3000/admin
 and login with the credentials provided in the seeds.rb file yay your an admin
