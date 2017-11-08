@@ -53,7 +53,7 @@ ___
 ### 3) WireFraming and Workflow Diagram ###
 
 Balsamiq was used for wireframing as I have used it on previous projects.
-![Wireframes](public/images/wireframe/homepage.png?raw=true)
+![Wireframes](public/images/wireframe/homePageWire.png?raw=true)
 to see more navigate to public/images/wireframe to see the rest.
 ____
 #### User flow ###
@@ -98,24 +98,9 @@ ___
     * STRIPE_SECRET_KEY=YourStripeSecretKey
     links for [sendgrid](https://app.sendgrid.com), [Stripe](https://dashboard.stripe.com), and [Amazon](https://signin.aws.amazon.com).
 
-Sendgrid Username and password is acquired by asking heroku for it run in terminal:
 
-```
-$ heroku addons:create sendgrid:starter
-```
 
-Get your credentials: ```$ heroku config:get SENDGRID_USERNAME```
-
-The value returned is your SENDGRID_USERNAME place this as the value for SENDGRID_USERNAME in dot env file.
-The next step is to get the SENDGRID_PASSWORD run in terminal:
-
-```
-$ heroku config:get SENDGRID_PASSWORD
-```
-
-again the value returned is treated the same as the SENDGRID_PASSWORD
-once you have set up all these variables you should perform in terminal:
-
+ To set up the app to run in the browser.
 ```
 rails db:create
 ```
@@ -142,6 +127,10 @@ Then run in Terminal
 
 ```
 rails db:seed
+```
+or just run
+```
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 ```
 
 navigate to http://localhost:3000/admin
