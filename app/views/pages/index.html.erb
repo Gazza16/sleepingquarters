@@ -8,8 +8,8 @@
       <div class="col-sm-3 product-box">
         <div class="panel panel-primary">
           <div class="panel-heading"><%= boat.boat_name %></div>
-          <div class="panel-body"><%= image_tag boat.image.url(:thumb), :class=>"center-panel-image"%></div>
-          <div class="panel-footer"> <%= link_to t('.show', :default => t("helpers.links.show")), boat_path(boat), :class => 'btn btn-primary center-panel-image' %></div>
+          <div class="panel-body"><%= image_tag boat.image.url(:thumb), :class=>"img-responsive center-block" %></div>
+          <div class="panel-footer"> <%= link_to t('.show', :default => t("helpers.links.show")), boat_path(boat), :class => 'btn btn-primary center-block' %></div>
         </div>
       </div>
       <% end %>
