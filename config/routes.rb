@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'pages#index'
   get 'users/index'
   get 'users/edit/:id', to: 'users#edit'
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   get 'pages/thankyou', to: 'pages#thankyou'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
+
   resources :bookings
   resources :books
   resources :boats
