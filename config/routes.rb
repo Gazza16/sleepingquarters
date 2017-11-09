@@ -9,13 +9,14 @@ Rails.application.routes.draw do
   get 'pages/contact', to: 'pages#contact'
   get 'pages/location', to: 'pages#location'
   get 'pages/thankyou', to: 'pages#thankyou'
+  get '/404', to: 'errors#not_found'
+  get '/422', to: 'errors#unacceptable'
+  get '/500', to: 'errors#internal#error'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :bookings
-  resources :books
-  resources :boats
-  resources :charges
+  resources :bookings, :boats, :charges
   resources :conversations do
     resources :messages
   end
