@@ -36,7 +36,7 @@
             height="260"
             frameborder="0" style="border:0"
             src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDhKe-MX9SsvhwAvae3ggrQkpMbrJUtnAA&q=<%= @boat.latitude %>, <%=@boat.longitude %>" allowfullscreen>
-          <!-- You will need to set your own Api key as this one is restricted to my localhost and production
+          <!-- You will need to set your own Api key as this one is restricted to my localhost and production -->
           </iframe>
 
   <%= form_for :booking, url: bookings_path, :html => { :class => "form-horizontal product" } do |f| %>
@@ -56,8 +56,8 @@
       <%= link_to t('.back', :default => t("helpers.links.back")), boats_path, :class => 'btn btn-default'  %>
      <% if @boat.user == current_user %>
       <%= link_to t('.edit', :default => t("helpers.links.edit")), edit_boat_path(@boat), :class => 'btn btn-default' %>
-     <% end %>
-     <% if @boat.user == current_user %>
+
+
       <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                 boat_path(@boat),
                 :method => 'delete',
